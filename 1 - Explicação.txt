@@ -1,0 +1,27 @@
+Para dar continuidade no curso de MongoDB com Node, o professor disponibilizou esse projeto.
+
+Para utilizar o MongoDB com Node, existem muitas bibliotecas. Utilizaremos a "mongoose" que é a mais usada com MongoDB.
+    Esas biblioteca suporta Typescript e esse é um dos principais motivos porque vamos utilizar ela.
+    Para instalar essa biblioteca (pelo terminal):
+        npm install mongoose (ENTER)
+        npm install @types/mongoose --save-dev (ENTER)
+
+Pronto, a biblioteca do mongoose já está instalada no projeto.
+
+Vamos colocar no arquivo .env o endereço do banco de dados do Mongo (BD loja que criamos em aulas anteriores):
+    MONGO_URL=mongodb://localhost:27017/loja
+
+Agora vamos criar um arquivo específio para conectar com nosso banco de dados MongoDB
+    Dentro de "src" vamos criar uma pasta chamada "database".
+    Dentro da pasta criada "database" vamos criar um arquivo chamado "mongo.ts".
+    Nesse arquivo criamos uma função que vai rodar no servidor (Observar comentários nesse arquivo)
+    Com esse arquivo configurado, vamos no nosso servidor (server.ts) e importar a função mongoConnect (observar comentários arquivo server.ts)
+
+Agora com a nossa conexão ao MongoDB criada com sucesso (já testamos a conexão e está conectando), vamos criar o Model / Schema para manipular os dados.
+    Ao abrir o MongoDB Compass, conectamos no banco "loja" criado e vemos 2 collections (produtos e usuarios).
+    Iremos trabalhar com a collection usuarios para criação do Model.
+    Então vamos criar o model, vamos em src -> models e vamos criar o arquivo User.ts
+
+
+Para rodar é só ir pelo terminal e dar o comando:
+    npm run start-dev (ENTER) //testar pelo browser localhost:2000
